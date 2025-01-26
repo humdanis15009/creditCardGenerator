@@ -11,7 +11,7 @@ function CardGenerator() {
   const generateCards = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/cards/generate",
+        "https://credit-card-generator-two-lemon.vercel.app/api/cards/generate",
         {
           quantity,
           cardBrand,

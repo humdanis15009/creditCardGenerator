@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cardRoutes = require("./routes/cardRoutes");
-const cors =require ("cors")
+const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -9,6 +9,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors()); // Parse incoming JSON requests
 app.use(bodyParser.json()); // Parse incoming JSON requests
 app.use("/api/cards", cardRoutes); // Route API requests to cardRoutes
+app.use("/testapi", (req, res) => {
+  res.send({ message: "deploy nhi ho rha hai" });
+});
+// Route API requests to cardRoutes
 
 // Serve static files (Frontend)
 app.use(express.static("frontend")); // Serves the frontend from 'frontend' folder
